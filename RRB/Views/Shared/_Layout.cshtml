@@ -16,12 +16,14 @@
 <body>
     <nav>
         <div class="row align-items-center justify-content-center">
-            <img src="images/rrblogo.png" class="website-logo" />
+            <a href="/">
+                <img src="~/images/rrblogo.png" class="website-logo" />
+            </a>
 
             <ul class="menu-nav">
-                <li class="nav-item">@Html.ActionLink("Home", "Index", "Home")</li>
-                <li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>
-                <li class="nav-item active">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li class="nav-item"><a href="/">Home</a></li>
+                <li class="nav-item"><a href="/Home/About">About</a></li>
+                <li class="nav-item active"><a href="/Home/Contact">Contact</a></li>
             </ul>
             @Html.Partial("_LoginPartial")
         </div>
