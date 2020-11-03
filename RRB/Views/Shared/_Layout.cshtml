@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - RRB</title>
-    <!-- TODO: ASK HRISTIYAN WHAT IS THIS LINE AND WHAT IS DOING, do we need this or its uselss -->
     @Styles.Render("~/Content/css")
 
     @Styles.Render("~/Content/main.min.css")
@@ -14,21 +13,23 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <nav>
-        <div class="row align-items-center justify-content-center">
-            <a href="/">
-                <img src="~/images/rrblogo.png" class="website-logo" />
-            </a>
+    <header>
+        <nav>
+            <div class="row align-items-center justify-content-center">
+                <a href="/">
+                    <img src="~/images/rrblogo.png" class="website-logo" />
+                </a>
 
-            <ul class="menu-nav">
-                <li class="nav-item"><a href="/">Home</a></li>
-                <li class="nav-item"><a href="/Home/About">About</a></li>
-                <li class="nav-item active"><a href="/Home/Contact">Contact</a></li>
-            </ul>
-            @Html.Partial("_LoginPartial")
-        </div>
-    </nav>
-    <div class="container body-content">
+                <ul class="menu-nav">
+                    <li class="nav-item"><a href="/">Home</a></li>
+                    <li class="nav-item"><a href="/Home/About">About</a></li>
+                    <li class="nav-item active"><a href="/Home/Contact">Contact</a></li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </nav>
+    </header>
+    <div class="body-content main">
 
         @RenderBody()
 
@@ -40,7 +41,8 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/Scripts/custom/menu.js")
+    @RenderSection("Scripts/custom", required: false)
 </body>
 KURKURKUR
 </html>
