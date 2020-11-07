@@ -6,57 +6,61 @@
   background-repeat: no-repeat;
   background-position: center; }
 
-nav {
-  height: 80px;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 30px;
+header {
   width: 100%;
-  top: 0;
-  position: fixed;
-  top: 0px;
-  z-index: 999;
-  left: 50%;
-  transform: translate(-50%, 0); }
-  nav.stick {
+  height: 75px;
+  position: fixed; }
+  header.stick {
     z-index: 999;
-    background-color: rgba(0, 0, 255, 0.55);
+    background-color: white;
     transition: .3s; }
-  nav.stick-none {
+    header.stick .menu-nav li:not(.active) a {
+      color: #2B2B2B; }
+      header.stick .menu-nav li:not(.active) a:hover {
+        color: #FF0175; }
+  header.stick-none {
     transition: .3s;
     background-color: unset; }
-  nav img.website-logo {
-    width: 55px;
-    height: 45px;
-    margin: 10px;
-    display: inline; }
-  nav ul.menu-nav {
-    display: inline-block;
-    margin-top: 8px;
-    float: left; }
-    nav ul.menu-nav.menu-user {
-      margin-left: auto; }
-    nav ul.menu-nav li {
-      display: inline;
-      margin: 0 5px; }
-      nav ul.menu-nav li a {
-        color: white;
-        text-transform: uppercase;
-        border-bottom: 2px solid transparent;
-        transition: 0.4s;
-        position: relative;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        nav ul.menu-nav li a::before {
-          content: '';
-          position: absolute;
-          bottom: -3px;
-          width: 0%;
-          height: 100%;
-          transition: 0.25s;
-          border-bottom: 2px solid red; }
-        nav ul.menu-nav li a:hover {
-          color: red; }
-          nav ul.menu-nav li a:hover::before {
-            width: 100%; }
-      nav ul.menu-nav li.active a {
-        color: red; }
+  header nav {
+    height: 75px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 30px;
+    width: 100%;
+    top: 0;
+    z-index: 999; }
+    header nav img.website-logo {
+      width: 55px;
+      height: 45px;
+      margin: 10px;
+      display: inline; }
+    header nav ul.menu-nav {
+      display: inline-block;
+      margin-top: 8px;
+      float: left; }
+      header nav ul.menu-nav.menu-user {
+        margin-left: auto; }
+      header nav ul.menu-nav li {
+        display: inline;
+        margin: 0 5px; }
+        header nav ul.menu-nav li a {
+          color: white;
+          text-transform: uppercase;
+          border-bottom: 2px solid transparent;
+          transition: 0.4s;
+          position: relative;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+          header nav ul.menu-nav li a::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            width: 0%;
+            height: 100%;
+            transition: 0.25s;
+            border-bottom: 2px solid #FF0175; }
+          header nav ul.menu-nav li a:hover {
+            color: #FF0175; }
+            header nav ul.menu-nav li a:hover::before {
+              width: 100%; }
+        header nav ul.menu-nav li.active a {
+          color: #FF0175; }

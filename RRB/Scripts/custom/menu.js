@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    var s = $("header nav");
+    var s = $("header");
     var pos = s.position();
     $(window).scroll(function () {
         var windowpos = $(window).scrollTop();
