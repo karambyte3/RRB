@@ -4,3 +4,50 @@ $gray: #2B2B2B;
 $pink: #FF0175;
 $orange: #FF6526;
 $neongreen: #80E0BB;
+
+// ================ fonts ===============
+$roboto-black: 'Roboto Black';
+$roboto-bold: 'Roboto Bold';
+$roboto-light: 'Roboto Light';
+$roboto-medium: 'Roboto Medium';
+$roboto-regular: 'Roboto Regular';
+$roboto-thin: 'Roboto Thin';
+
+$raleway-bold: 'Raleway Bold';
+$raleway-semibold: 'Raleway SemiBold';
+$raleway-regular: 'Raleway Regular';
+$raleway-medium: 'Raleway Medium';
+$raleway-light: 'Raleway Light';
+$raleway-extralight: 'Raleway ExtraLight';
+$raleway-thin: 'Raleway Thin';
+
+// ================ MIXINS ==============
+@mixin breakpoint($device) {
+    @if $device == xs {
+        @media only screen and (max-width: 500px) {
+            @content;
+        }
+    }
+
+    @if $device == sm {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @else if $device == md {
+        @media (max-width: 992px) {
+            @content;
+        }
+    }
+
+    @else if $device == lg {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Breakpoint mixin supports: xs, sm, md, lg";
+    }
+}

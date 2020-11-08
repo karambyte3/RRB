@@ -4,18 +4,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - RRB</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
     @Styles.Render("~/Content/css")
 
     @Styles.Render("~/Content/main.min.css")
 
     @Styles.Render("~/Content/reset.css")
     @Styles.Render("~/Content/libraries/bootstrap-grid.min.css")
+    @Styles.Render("~/Content/libraries/hamburgers.css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <header>
+    <header class="mobile-menu-collapsed">
         <nav>
-            <div class="row align-items-center justify-content-center">
+            <div class="menu-items row align-items-center justify-content-center">
                 <a href="/">
                     <img src="~/images/rrblogo.png" class="website-logo" />
                 </a>
@@ -27,6 +31,12 @@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
+
+            <button class="hamburger hamburger--squeeze js-hamburger d-none" type="button" id="toggleMenu">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
         </nav>
     </header>
     <div class="body-content main">
