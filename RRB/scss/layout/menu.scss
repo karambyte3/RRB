@@ -107,28 +107,68 @@ header {
             &.stick-none {
                 background-color: white;
             }
+
+            nav .menu-items .menu-nav {
+                opacity: 1 !important;
+                transition-delay: 0.2s;
+            }
         }
 
         &.mobile-menu-collapsed {
             height: 75px;
-            transition: 0.5s;
+            transition: all 1s;
+
+            .menu-items .menu-nav {
+                opacity: 0 !important;
+            }
         }
 
         nav {
+            .logo-link {
+                margin: 0 auto;
+                display: block;
+                max-width: 75px;
+                margin-bottom: 150px;
+            }
+
             #toggleMenu {
                 display: unset !important;
                 position: absolute;
                 right: 10px;
                 top: 10px;
+                transform: scale(0.8);
 
 
                 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-                    background-color: rgba(179, 0, 255, 0.88);
+                    background-color: white;
                 }
             }
 
-            .menu-items .menu-nav {
-                display: none;
+            .menu-items {
+                display: block;
+
+                .menu-nav {
+                    //display: none;
+                    display: block;
+                    float: unset;
+                    margin-bottom: 30px;
+                    text-align: center;
+                    opacity: 0;
+                    transition: 0.4s;
+
+                    &.menu-user {
+                        border-top: 2px solid white;
+                        padding-top: 30px;
+                        max-width: 250px;
+                        display: block;
+                        margin: 0 auto;
+                    }
+
+                    li {
+                        display: block;
+                        margin-bottom: 20px;
+                    }
+                }
             }
         }
     }

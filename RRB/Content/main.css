@@ -125,15 +125,42 @@ header {
         transition: 0.5s; }
         header.mobile-menu-expanded.stick-none {
           background-color: white; }
+        header.mobile-menu-expanded nav .menu-items .menu-nav {
+          opacity: 1 !important;
+          transition-delay: 0.2s; }
       header.mobile-menu-collapsed {
         height: 75px;
-        transition: 0.5s; }
+        transition: all 1s; }
+        header.mobile-menu-collapsed .menu-items .menu-nav {
+          opacity: 0 !important; }
+      header nav .logo-link {
+        margin: 0 auto;
+        display: block;
+        max-width: 75px;
+        margin-bottom: 150px; }
       header nav #toggleMenu {
         display: unset !important;
         position: absolute;
         right: 10px;
-        top: 10px; }
+        top: 10px;
+        transform: scale(0.8); }
         header nav #toggleMenu .hamburger-inner, header nav #toggleMenu .hamburger-inner::before, header nav #toggleMenu .hamburger-inner::after {
-          background-color: rgba(179, 0, 255, 0.88); }
-      header nav .menu-items .menu-nav {
-        display: none; } }
+          background-color: white; }
+      header nav .menu-items {
+        display: block; }
+        header nav .menu-items .menu-nav {
+          display: block;
+          float: unset;
+          margin-bottom: 30px;
+          text-align: center;
+          opacity: 0;
+          transition: 0.4s; }
+          header nav .menu-items .menu-nav.menu-user {
+            border-top: 2px solid white;
+            padding-top: 30px;
+            max-width: 250px;
+            display: block;
+            margin: 0 auto; }
+          header nav .menu-items .menu-nav li {
+            display: block;
+            margin-bottom: 20px; } }
