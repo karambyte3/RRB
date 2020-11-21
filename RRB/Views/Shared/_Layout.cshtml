@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - RRB</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-
     @Styles.Render("~/Content/css")
 
     @Styles.Render("~/Content/main.min.css")
@@ -16,8 +14,9 @@
     @Styles.Render("~/Content/libraries/hamburgers.css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
-    <header class="mobile-menu-collapsed">
+
+<body class="stick-none @ViewBag.pageName">
+    <header class="mobile-menu-collapsed stick-none">
         <nav>
             <div class="menu-items row align-items-center justify-content-center">
                 <a href="/" class="logo-link">
@@ -40,6 +39,7 @@
         </nav>
     </header>
     <div class="body-content main">
+        @*<h3 class="mt-5 pt-5">@ViewBag.pageName</h3>*@
 
         @RenderBody()
 
@@ -50,6 +50,7 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/customLibraries/jquery-ui.min.js")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Scripts/custom/menu.js")
     @RenderSection("Scripts/custom", required: false)

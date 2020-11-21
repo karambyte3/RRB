@@ -1,7 +1,13 @@
-﻿@import '../scss/fonts.scss';
+﻿// configurations
+@import '../scss/fonts.scss';
 @import '../scss/variables.scss';
 
+// layout styles
 @import '../scss/layout/menu.scss';
 @import '../scss/layout/footer.scss';
 
+// components
+@import '../scss/components/hero.scss';
+
+// pages
 @import '../scss/home.scss';

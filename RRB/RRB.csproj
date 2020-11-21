@@ -367,6 +367,7 @@
     <Content Include="scss\home.scss" />
     <Content Include="scss\layout\menu.scss" />
     <Content Include="scss\layout\footer.scss" />
+    <Content Include="scss\components\hero.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

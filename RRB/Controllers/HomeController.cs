@@ -10,6 +10,8 @@ namespace RRB.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.pageName = "home-page";
+
             return View();
         }
 

@@ -1,39 +1,61 @@
-﻿$(document).ready(function () {
-    var s = $("header");
-    var pos = s.position();
+﻿function toggleStickyClass($element, sticky) {
+    if (sticky) {
+        $element.removeClass("stick-none");
+        $element.addClass("stick");
+    } else {
+        $element.addClass("stick-none");
+        $element.removeClass("stick");
+    }
+}
+
+$(document).ready(function () {
+    var $header = $("header");
+
     $(window).scroll(function () {
         var windowpos = $(window).scrollTop();
 
-        if (windowpos + 50 >= pos.top) {
-            setTimeout(function () {
-                s.removeClass("stick-none");
-                s.addClass("stick");
-            }, 100);
+        if (windowpos > 0) {
+            toggleStickyClass($header, true);
+            toggleStickyClass($('body'), true);
         }
 
         if (windowpos === 0) {
-            setTimeout(function () {
-                s.addClass("stick-none");
-                s.removeClass("stick");
-            }, 100);
+            toggleStickyClass($header, false);
+            toggleStickyClass($('body'), false);
         }
-
-        console.log(windowpos === 0)
     });
 
     $('#toggleMenu').on('click', function (e) {
         var $this = $('#toggleMenu');
-        var $menu = $("header");
+        var $body = $("body");
         var $navEl = $("header nav");
 
         if ($this.hasClass('is-active')) {
             $this.removeClass('is-active');
-            $menu.removeClass('mobile-menu-expanded');
-            $menu.addClass('mobile-menu-collapsed');
+            $body.removeClass('mobile-menu-expanded');
+            $body.addClass('mobile-menu-collapsed');
         } else {
             $this.addClass('is-active');
-            $menu.addClass('mobile-menu-expanded');
-            $menu.removeClass('mobile-menu-collapsed');
+            $body.addClass('mobile-menu-expanded');
+            $body.removeClass('mobile-menu-collapsed');
         }
     })
+});
+
+//apply sticky classes for menu
+$(window).on('load', function () {
+    var windowpos = $(window).scrollTop().toFixed();
+    var $header = $("header");
+
+    if (windowpos > 0) {
+        toggleStickyClass($header, true);
+        toggleStickyClass($('body'), true);
+    }
+})
+
+$(function () {
+    $('a.hero-scroll-down').on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top - 75 }, 1000, 'easeInOutQuart');
+    });
 });
